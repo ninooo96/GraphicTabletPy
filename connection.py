@@ -11,6 +11,7 @@ class connection:
         self.port = port
         socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
         self.socket = socket
+        print("ciao")
 
     def send(self, message):
         self.socket.send(message)
