@@ -1,17 +1,16 @@
 #Module that contains classes to permit the connection Client-Server
-#PyBluez works only with python 3.8.1
+#Il modulo PyBluez l'ho installato solo su python 3.8.1
 
  #https://people.csail.mit.edu/albert/bluez-intro/x232.html
 import bluetooth
 import sys
-class connection:
+class connectionBT:
     """ Class to establish a bluetooth connection Client-Server """
     def __init__(self, host, port):
         self.host = host
         self.port = port
         socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
         self.socket = socket
-        print("ciao")
 
     def send(self, message):
         self.socket.send(message)
@@ -36,7 +35,7 @@ class connection:
         print("received", data)
         return data
     
-class connectionUtility:
+class connectionUtilityBT:
     """ Utility methods for Bluetooth Connection """
     @classmethod
     def searchDevices(cls):
@@ -48,4 +47,4 @@ class connectionUtility:
             print (" %s - %s" % (addr, name))
         
 if __name__ == "__main__":
-    connectionUtility.searchDevices()
+    connectionUtilityBT.searchDevices()
