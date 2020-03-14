@@ -1,5 +1,5 @@
 import sys
-sys.path.append("C:\\Users\\ninoo\\Documents\\Python project\\Graphic Tablet\\")
+sys.path.append("C:\\Users\\ninoo\\Documents\\Python project\\Graphic Tablet\\client\\")
 import connection as conn
 import gui
 

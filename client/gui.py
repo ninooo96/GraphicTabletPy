@@ -48,7 +48,7 @@ FloatLayout:
 ''')
 
 search_layout = Builder.load_string('''
-FloatLayout:
+BoxLayout:
     canvas.before:
         Color:
             rgba: 1, 1, 1, .2
@@ -78,11 +78,11 @@ class Home(App):
     def build(self):
         Window.size = (300, 150)
         layout = BoxLayout(orientation='horizontal')
-
-        bluetooth_btn = Button(background_normal=('client\\bluetooth_logo.png'))
+    
+        bluetooth_btn = Button(background_normal=('bluetooth_logo.png'))
         bluetooth_btn.bind(on_press=self.callbackBT)
 
-        network_btn = Button(background_normal=('client\\wifi_logo.png'))
+        network_btn = Button(background_normal=('wifi_logo.png'))
         network_btn.bind(on_press=self.callbackNET)
 
         layout.add_widget(bluetooth_btn)
@@ -92,7 +92,8 @@ class Home(App):
 class SearchBluetooth(App):
     def build(self):
         Window.size = (500, 350)
-        return search_layout
+        layout = BoxLayout(orientation='vertical')
+        
 
 class Tablet(App):
     
