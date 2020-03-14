@@ -1,7 +1,7 @@
 import sys
-sys.path.append("C:\\Users\\ninoo\\Documents\\Python project\\Graphic Tablet\\client\\")
+sys.path.append("C:\\Users\\ninoo\\Documents\\Python project\\Graphic Tablet\\")
 import connection as conn
-import gui
+from client import gui
 
 if(gui.bluetooth):
     utility = conn.connectionUtilityBT
