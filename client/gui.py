@@ -14,8 +14,7 @@ Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 import sys
 sys.path.append("C:\\Users\\ninoo\\Documents\\Python project\\Graphic Tablet\\")
 import connection as conn
-from client import gui
-
+from pynput import mouse
 
 net=False
 bluetooth=True
@@ -151,10 +150,25 @@ class portWindow(App):
         return layout
 
 class Tablet(App):
+    def robot(self):
+        def on_move(x, y):
+            print(x,y)
+    
+        def on_click(x, y, button, pressed):
+            print("on_click", x, y, button, pressed)
+        listener = mouse.Listener(on_move=on_move, on_click = on_click)
+        listener.start() 
     
     def build(self):
         Window.size = (800, 450)
         root.add_widget(BorderLine())
+        self.robot()
         return root
 
-Home().run()
+   
+Home().run()    
+
+    
+    
+
+
